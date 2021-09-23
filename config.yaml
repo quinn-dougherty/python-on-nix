@@ -1,3 +1,5 @@
 baseURL: https://python-on-nix.io
 languageCode: en-us
-title: Python on Nix
+permalinks:
+  projects: /projects/:filename/
+publishDir: result

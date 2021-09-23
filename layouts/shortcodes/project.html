@@ -1,0 +1,5 @@
+{{ $data := index $.Site.Data.projects (index .Params 0) }}
+
+{{ $data.title }}
+
+{{ jsonify $data }}

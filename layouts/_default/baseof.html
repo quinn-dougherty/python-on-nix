@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      {{ block "title" . }}
+        {{ .Site.Title }}
+      {{ end }}
+    </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" />
+    {{ $css := resources.Get "styles.css" | minify | fingerprint "sha256" }}
+    <link rel="stylesheet" href={{ $css.Permalink }} integrity={{ $css.Data.Integrity }} />
+
+  </head>
+  <body class="bg-white consolas lh-copy">
+
+    {{ block "nav" . }}
+      <nav class="bg-black w-100">
+        <a class="b f2 link pl2 white" href="/">
+          Python on Nix
+        </a>
+      </nav>
+
+      <nav class="bg-cyan pa0 shadow-1 w-100">
+        <p class="black f6 ma0 pa0 pl2">
+          Extensive collection of Python projects, for Nix!
+        </p>
+      </nav>
+    {{ end }}
+
+    <div class="pl1">
+      <div class="pa1">
+        {{ block "main" . }}
+        {{ end }}
+      </div>
+    </div>
+
+    {{ block "footer" . }}
+    {{ end }}
+  </body>
+</html>
