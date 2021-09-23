@@ -1,4 +1,4 @@
-baseURL: https://python-on-nix.io
+baseURL: http://localhost:8000
 languageCode: en-us
 permalinks:
   projects: /projects/:filename/

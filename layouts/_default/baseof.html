@@ -3,7 +3,7 @@
   <head>
     <title>
       {{ block "title" . }}
-        {{ .Site.Title }}
+        Python on Nix
       {{ end }}
     </title>
 
@@ -11,8 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" />
-    {{ $css := resources.Get "styles.css" | minify | fingerprint "sha256" }}
-    <link rel="stylesheet" href={{ $css.Permalink }} integrity={{ $css.Data.Integrity }} />
+    {{ $resource := resources.Get "styles.css" | minify }}
+    <link rel="stylesheet" href={{ $resource.RelPermalink }} />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
 
   </head>
   <body class="bg-white consolas lh-copy">
