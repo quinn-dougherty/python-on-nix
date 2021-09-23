@@ -1,12 +1,15 @@
 {{ define "title" }}
-  {{ .Title }} &ndash; {{ .Site.Title }}
+  {{ .Params.project }} - Python on Nix
 {{ end }}
 
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
+  {{ with index $.Site.Data.projects .Params.project }}
+    <p>
+      <dfn>
+        <a class="b blue" href=/projects/{{.title}}>{{ .title }}</a> -
+      </dfn>
+      {{ .meta.desc }}
+    </p>
 
-  {{ range $key, $val := .Params.versions }}
-    {{ $key }}
   {{ end }}
 {{ end }}
