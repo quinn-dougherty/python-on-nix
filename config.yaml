@@ -1,5 +1,10 @@
 baseURL: http://localhost:8000
 languageCode: en-us
+markup:
+  highlight:
+    lineNos: true
+    lineNumbersInTable: true
+    style: perldoc
 permalinks:
   projects: /projects/:filename/
 publishDir: result
