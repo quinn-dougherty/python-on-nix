@@ -2,9 +2,9 @@
   {{ range $.Site.Data.projects }}
     <p>
       <dfn>
-        <a class="b blue" href=/projects/{{.title}}>{{ .title }}</a> -
+        <a class="b blue" href=/projects/{{ .title }}>{{ .title }}</a>
       </dfn>
-      {{ .meta.desc }}
+      - {{ .meta.desc }}
     </p>
   {{ end }}
 {{ end }}
